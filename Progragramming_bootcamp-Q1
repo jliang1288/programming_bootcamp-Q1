@@ -1,0 +1,30 @@
+# Programming Task #1
+
+# How it works:
+# We want to build a number through addition.
+# To build the number: We need to Loop through all the numbers in the list.
+# We can get the place value of a number by multiplying it by a base 10.
+
+# For example: Given, [1,2,3,4], when we build the number, 1 will represent 1000. Therefore, 1 * 10 ** 3
+#                                                          2 will represent 200. Therefore, 2 * 10 ** 2 ...
+# So what is the pattern in this case? Intuitively, it seems to have something to do with the length of the list.
+# Taking that into consideration, we can see the pattern in this case is:
+# Number * 10 ** (length_of_list - 1)
+# Adding these numbers together is, in essence, how we will "build"
+
+# Why it works:
+# Every place value in a number can be represented as a base of 10.
+# A number is 'in essence', built by adding these base 10's together.
+
+numbers = [1,2,3,4]
+num_rep= 0
+i = 0
+
+for num in numbers:
+    i += 1
+    num_place = num * 10**(len(numbers) - i)
+    num_rep += num_place
+
+# CHECK
+print(num_rep)
+print(f"Type of num_rep = {type(num_rep)}")
